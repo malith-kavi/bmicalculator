@@ -12,6 +12,10 @@ class _MainPageState extends State<MainPage> {
 
   int height = 150;
   int weight = 70;
+
+  late double bmi = calculateBMI(height: height, weight: weight);
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +64,10 @@ class _MainPageState extends State<MainPage> {
                             FloatingActionButton(
                               onPressed: (){
                                 setState(() {
-                                  height--;
+                                  if (height>50) {
+                                    height--;
+                                    bmi = calculateBMI(height: height, weight: weight);
+                                  }                                 
                                 }); 
                               },
                               shape: CircleBorder(),
@@ -70,7 +77,10 @@ class _MainPageState extends State<MainPage> {
                             FloatingActionButton(
                               onPressed: (){
                                 setState(() {
-                                  height++;
+                                  if (height<220) {
+                                    height++;
+                                    bmi = calculateBMI(height: height, weight: weight);
+                                  }
                                 });
                               },
                               shape: CircleBorder(),
@@ -95,7 +105,10 @@ class _MainPageState extends State<MainPage> {
                             FloatingActionButton(
                               onPressed: (){
                                 setState(() {
-                                  weight--;
+                                  if (weight>25) {
+                                    weight--;
+                                    bmi = calculateBMI(height: height, weight: weight);
+                                  }
                                 });
                               },
                               shape: CircleBorder(),
@@ -105,7 +118,10 @@ class _MainPageState extends State<MainPage> {
                             FloatingActionButton(
                               onPressed: (){
                                 setState(() {
-                                  weight++;
+                                  if (weight<300) {
+                                    weight++;
+                                    bmi = calculateBMI(height: height, weight: weight);
+                                  }
                                 });
                               },
                               shape: CircleBorder(),
@@ -122,7 +138,8 @@ class _MainPageState extends State<MainPage> {
               Column(
                 children: [
                   const Text("BMI"),
-                  Text("22.00",style: kInputLabelColor.copyWith(color: kTextColorR, fontSize: 60),),
+                  Text(bmi.toStringAsFixed(2),
+                  style: kInputLabelColor.copyWith(color: kTextColorR, fontSize: 60),),
                 ],
               )
             ],
@@ -132,5 +149,7 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-
+  double calculateBMI({required int height, required int weight}){
+    return (weight/(height*height))*10000;
+  }
 }
