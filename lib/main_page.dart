@@ -52,10 +52,10 @@ class _MainPageState extends State<MainPage> {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Text("Height"),
+                        const Text("Height"),
                         Text("$height",
                         style: kInputLabelColor
                         ),
@@ -70,10 +70,10 @@ class _MainPageState extends State<MainPage> {
                                   }                                 
                                 }); 
                               },
-                              shape: CircleBorder(),
-                              child: Icon(Icons.remove,size:40,),
+                              shape: const CircleBorder(),
+                              child: const Icon(Icons.remove,size:40,),
                             ),
-                            SizedBox(width: 25,),
+                            const SizedBox(width: 25,),
                             FloatingActionButton(
                               onPressed: (){
                                 setState(() {
@@ -83,20 +83,20 @@ class _MainPageState extends State<MainPage> {
                                   }
                                 });
                               },
-                              shape: CircleBorder(),
-                              child: Icon(Icons.add,size:40,),
+                              shape: const CircleBorder(),
+                              child: const Icon(Icons.add,size:40,),
                             ),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Text("Weight"),
+                        const Text("Weight"),
                         Text("$weight",
                         style: kInputLabelColor
                         ),
@@ -111,10 +111,10 @@ class _MainPageState extends State<MainPage> {
                                   }
                                 });
                               },
-                              shape: CircleBorder(),
-                              child: Icon(Icons.remove,size:40,),
+                              shape: const CircleBorder(),
+                              child: const Icon(Icons.remove,size:40,),
                             ),
-                            SizedBox(width: 25,),
+                            const SizedBox(width: 25,),
                             FloatingActionButton(
                               onPressed: (){
                                 setState(() {
@@ -124,8 +124,8 @@ class _MainPageState extends State<MainPage> {
                                   }
                                 });
                               },
-                              shape: CircleBorder(),
-                              child: Icon(Icons.add,size:40,),
+                              shape: const CircleBorder(),
+                              child: const Icon(Icons.add,size:40,),
                             ),
                           ],
                         ),
