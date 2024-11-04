@@ -81,99 +81,117 @@ class _MainPageState extends State<MainPage> {
                 const SizedBox(height: 50,),
                 Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          const Text("Height"),
-                          Text("$height",
-                          style: kInputLabelColor
-                          ),
-                          Row(
-                            children: [
-                              FloatingActionButton(
-                                onPressed: (){
-                                  setState(() {
-                                    if (height>50) {
-                                      height--;
-                                      bmi = calculateBMI(height: height, weight: weight);
-                                    }                                 
-                                  }); 
-                                },
-                                shape: const CircleBorder(),
-                                child: const Icon(Icons.remove,size:40,),
-                              ),
-                              const SizedBox(width: 25,),
-                              FloatingActionButton(
-                                onPressed: (){
-                                  setState(() {
-                                    if (height<220) {
-                                      height++;
-                                      bmi = calculateBMI(height: height, weight: weight);
-                                    }
-                                  });
-                                },
-                                shape: const CircleBorder(),
-                                child: const Icon(Icons.add,size:40,),
-                              ),
-                            ],
-                          ),
-                        ],
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(25)
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            const Text("Height"),
+                            Text("$height",
+                            style: kInputLabelColor
+                            ),
+                            Row(
+                              children: [
+                                FloatingActionButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      if (height>50) {
+                                        height--;
+                                        bmi = calculateBMI(height: height, weight: weight);
+                                      }                                 
+                                    }); 
+                                  },
+                                  shape: const CircleBorder(),
+                                  child: const Icon(Icons.remove,size:40,),
+                                ),
+                                const SizedBox(width: 25,),
+                                FloatingActionButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      if (height<220) {
+                                        height++;
+                                        bmi = calculateBMI(height: height, weight: weight);
+                                      }
+                                    });
+                                  },
+                                  shape: const CircleBorder(),
+                                  child: const Icon(Icons.add,size:40,),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          const Text("Weight"),
-                          Text("$weight",
-                          style: kInputLabelColor
-                          ),
-                          Row(
-                            children: [
-                              FloatingActionButton(
-                                onPressed: (){
-                                  setState(() {
-                                    if (weight>25) {
-                                      weight--;
-                                      bmi = calculateBMI(height: height, weight: weight);
-                                    }
-                                  });
-                                },
-                                shape: const CircleBorder(),
-                                child: const Icon(Icons.remove,size:40,),
-                              ),
-                              const SizedBox(width: 25,),
-                              FloatingActionButton(
-                                onPressed: (){
-                                  setState(() {
-                                    if (weight<300) {
-                                      weight++;
-                                      bmi = calculateBMI(height: height, weight: weight);
-                                    }
-                                  });
-                                },
-                                shape: const CircleBorder(),
-                                child: const Icon(Icons.add,size:40,),
-                              ),
-                            ],
-                          ),
-                        ],
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            const Text("Weight"),
+                            Text("$weight",
+                            style: kInputLabelColor
+                            ),
+                            Row(
+                              children: [
+                                FloatingActionButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      if (weight>25) {
+                                        weight--;
+                                        bmi = calculateBMI(height: height, weight: weight);
+                                      }
+                                    });
+                                  },
+                                  shape: const CircleBorder(),
+                                  child: const Icon(Icons.remove,size:40,),
+                                ),
+                                const SizedBox(width: 25,),
+                                FloatingActionButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      if (weight<300) {
+                                        weight++;
+                                        bmi = calculateBMI(height: height, weight: weight);
+                                      }
+                                    });
+                                  },
+                                  shape: const CircleBorder(),
+                                  child: const Icon(Icons.add,size:40,),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 50,),
-                Column(
-                  children: [
-                    const Text("BMI"),
-                    Text(bmi.toStringAsFixed(2),
-                    style: kInputLabelColor.copyWith(color: kTextColorR, fontSize: 60),
-                    ),
-                    Text(getResult(bmi))
-            
-                  ],
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Column(
+                    children: [
+                      const Text("BMI"),
+                      Text(bmi.toStringAsFixed(2),
+                      style: kInputLabelColor.copyWith(color: kTextColorR, fontSize: 60),
+                      ),
+                      Text(getResult(bmi))
+                              
+                    ],
+                  ),
                 )
               ],
             ),
