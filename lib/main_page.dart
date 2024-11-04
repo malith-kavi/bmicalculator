@@ -128,14 +128,14 @@ class _MainPageState extends State<MainPage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.green,
+                        border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(25)
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            const Text("Height"),
+                            const Text("Height",style: TextStyle(fontWeight: FontWeight.w600),),
                             Text("$height",
                             style: kInputLabelColor
                             ),
@@ -150,6 +150,9 @@ class _MainPageState extends State<MainPage> {
                                       }                                 
                                     }); 
                                   },
+                                  backgroundColor: Colors.white,
+                                  elevation: 0,
+                                  highlightElevation: 0,
                                   shape: const CircleBorder(),
                                   child: const Icon(Icons.remove,size:40,),
                                 ),
@@ -163,6 +166,9 @@ class _MainPageState extends State<MainPage> {
                                       }
                                     });
                                   },
+                                  backgroundColor: Colors.white,
+                                  elevation: 0,
+                                  highlightElevation: 0,
                                   shape: const CircleBorder(),
                                   child: const Icon(Icons.add,size:40,),
                                 ),
@@ -182,7 +188,7 @@ class _MainPageState extends State<MainPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            const Text("Weight"),
+                            const Text("Weight",style: TextStyle(fontWeight: FontWeight.w600),),
                             Text("$weight",
                             style: kInputLabelColor
                             ),
