@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bmicalculator/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -39,15 +41,18 @@ class _MainPageState extends State<MainPage> {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: gender == 'Male'? Colors.orange: Colors.yellow,
+                          
+                          border: gender == 'Male'
+                          ? Border.all(color: Colors.black, width: 2)
+                          : Border.all(color: Colors.black12, width: 2),
                           borderRadius: BorderRadius.circular(25)
                         ),    
                         child: Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Icon(Icons.male, size: 150,),
-                              Text("Male"),
+                              Icon(Icons.male, size: 150,color: Colors.orangeAccent,),
+                              Text("Male",style: TextStyle(fontWeight: FontWeight.w600),),
                             ],
                           ),
                         ),
@@ -62,21 +67,61 @@ class _MainPageState extends State<MainPage> {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: gender == 'Female'? Colors.orange: Colors.yellow,
+                          border: gender == 'Female'
+                          ? Border.all(color: Colors.black,width: 2)
+                          : Border.all(color: Colors.black12,width: 2),
                           borderRadius: BorderRadius.circular(25)
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Icon(Icons.female, size: 150,),
-                              Text("Female"),
+                              Icon(Icons.female, size: 150,color: Colors.pinkAccent,),
+                              Text("Female", style: TextStyle(fontWeight: FontWeight.w600),),
                             ],
                           ),
                         ),
                       ),
                     )
                   ],
+                ),
+                const SizedBox(height: 50,),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color:bmi >= 25
+                        ?Colors.red:
+                        bmi < 18.5 
+                        ?Colors.orange
+                        :Colors.green,width: 2),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        const Text("BMI", style: TextStyle(fontWeight: FontWeight.w600),),
+                        Row(
+                          children: [
+                            Spacer(),
+                            Text(bmi.toStringAsFixed(2),
+                            style: kInputLabelColor.copyWith(color: bmi >= 25 
+                            ? Colors.red :
+                            bmi < 18.5 
+                            ?Colors.orange
+                            :Colors.green, fontSize: 60),
+                            ),
+                            Spacer(),
+                          ],
+                        ),
+                        Text(getResult(bmi),style: TextStyle(fontWeight: FontWeight.w600,color: bmi >= 25
+                        ?Colors.red:
+                        bmi < 18.5 
+                        ?Colors.orange
+                        :Colors.green),)
+                                
+                      ],
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 50,),
                 Row(
@@ -176,23 +221,6 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 50,),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Column(
-                    children: [
-                      const Text("BMI"),
-                      Text(bmi.toStringAsFixed(2),
-                      style: kInputLabelColor.copyWith(color: kTextColorR, fontSize: 60),
-                      ),
-                      Text(getResult(bmi))
-                              
-                    ],
-                  ),
-                )
               ],
             ),
           ),
