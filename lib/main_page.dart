@@ -30,7 +30,9 @@ class _MainPageState extends State<MainPage> {
           child: Padding(
             padding: const EdgeInsets.only(top: 25),
             child: Column(
+              
               children: [
+                //Spacer(),
                 Row(
                   children: [
                     GestureDetector(
@@ -181,7 +183,7 @@ class _MainPageState extends State<MainPage> {
                     const Spacer(),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.green,
+                        border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Padding(
@@ -203,6 +205,9 @@ class _MainPageState extends State<MainPage> {
                                       }
                                     });
                                   },
+                                  elevation: 0,
+                                  highlightElevation: 0,
+                                  backgroundColor: Colors.white,
                                   shape: const CircleBorder(),
                                   child: const Icon(Icons.remove,size:40,),
                                 ),
@@ -216,6 +221,9 @@ class _MainPageState extends State<MainPage> {
                                       }
                                     });
                                   },
+                                  elevation: 0,
+                                  highlightElevation: 0,
+                                  backgroundColor: Colors.white,
                                   shape: const CircleBorder(),
                                   child: const Icon(Icons.add,size:40,),
                                 ),
@@ -227,6 +235,7 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ],
                 ),
+                //Spacer()
               ],
             ),
           ),
