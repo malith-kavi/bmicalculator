@@ -29,10 +29,8 @@ class _MainPageState extends State<MainPage> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Padding(
             padding: const EdgeInsets.only(top: 25),
-            child: Column(
-              
+            child: Column(  
               children: [
-                //Spacer(),
                 Row(
                   children: [
                     GestureDetector(
@@ -235,7 +233,6 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ],
                 ),
-                //Spacer()
               ],
             ),
           ),
